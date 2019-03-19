@@ -14,15 +14,6 @@ public enum TextFieldModelEnum {
     case generic(type: TextFieldType, title: String)
     case entry(type: TextFieldType, title: String, entry: String)
     
-//    var info: TextFieldInfo {
-//        switch self {
-//        case .generic(let type, let title):
-//            return (type, title, "")
-//        case .entry(let type, let title, let entry):
-//            return (type, title, entry)
-//        }
-//    }
-    
     var info: TextFieldInfo {
         get {
             switch self {

@@ -2,7 +2,58 @@ import UIKit
 
 class ThirdViewController: UITableViewController {
 
-    var array: [TextFieldModelEnum] = []
+    var array: [TextFieldModelEnum] = [
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista"),
+        TextFieldModelEnum(type: .text, title: "Normal"),
+        TextFieldModelEnum(type: .number, title: "Números"),
+        TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
+        TextFieldModelEnum(type: .date, title: "Data"),
+        TextFieldModelEnum(type: .entry, title: "Lista")]
+    
     var rowListSelected = 0
     
     override func viewDidLoad() {
@@ -13,15 +64,6 @@ class ThirdViewController: UITableViewController {
     
     func setupView() {
         self.tableView.registerNib(for: TextFieldCell.self)
-        
-        for _ in 1...10 {
-            array.append(contentsOf: [
-                TextFieldModelEnum(type: .text, title: "Normal"),
-                TextFieldModelEnum(type: .number, title: "Números"),
-                TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
-                TextFieldModelEnum(type: .date, title: "Data"),
-                TextFieldModelEnum(type: .entry, title: "Lista")])
-        }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tap)
