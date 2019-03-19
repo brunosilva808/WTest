@@ -30,17 +30,28 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqq-fx-IiS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                        <connections>
+                            <action selector="buttonPressed:" destination="ce9-XG-Cgk" eventType="touchUpInside" id="vKQ-YJ-xld"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kGf-IE-asR" firstAttribute="centerY" secondItem="LUa-Yc-Xkx" secondAttribute="centerY" id="0pK-6c-cXK"/>
+                    <constraint firstAttribute="bottom" secondItem="wqq-fx-IiS" secondAttribute="bottom" id="CEB-nd-q2z"/>
                     <constraint firstAttribute="bottom" secondItem="LUa-Yc-Xkx" secondAttribute="bottom" constant="21" id="KQy-jt-2aL"/>
+                    <constraint firstItem="wqq-fx-IiS" firstAttribute="leading" secondItem="CCn-3w-jZR" secondAttribute="leading" id="XIb-aW-Ipq"/>
                     <constraint firstItem="LUa-Yc-Xkx" firstAttribute="top" secondItem="CCn-3w-jZR" secondAttribute="top" constant="21.5" id="eeI-bW-dUm"/>
+                    <constraint firstItem="wqq-fx-IiS" firstAttribute="top" secondItem="CCn-3w-jZR" secondAttribute="top" id="fd0-Pq-7ND"/>
                     <constraint firstItem="kGf-IE-asR" firstAttribute="leading" secondItem="LUa-Yc-Xkx" secondAttribute="trailing" constant="16" id="itk-H7-vXZ"/>
+                    <constraint firstAttribute="trailing" secondItem="wqq-fx-IiS" secondAttribute="trailing" id="pGO-sb-f3U"/>
                     <constraint firstItem="LUa-Yc-Xkx" firstAttribute="leading" secondItem="CCn-3w-jZR" secondAttribute="leading" constant="16" id="uYa-1H-GCE"/>
                     <constraint firstAttribute="trailing" secondItem="kGf-IE-asR" secondAttribute="trailing" constant="16" id="vOP-qU-MnO"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="button" destination="wqq-fx-IiS" id="7Ei-EM-H0Y"/>
                 <outlet property="label" destination="LUa-Yc-Xkx" id="sfJ-8i-tlg"/>
                 <outlet property="textField" destination="kGf-IE-asR" id="oue-Ma-ixs"/>
             </connections>
