@@ -2,10 +2,12 @@ import UIKit
 
 class FourthViewController: UIViewController {
 
+    @IBOutlet private weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.webView.loadRequest(URLRequest(url: Configuration.Website.url))
     }
 
 }
