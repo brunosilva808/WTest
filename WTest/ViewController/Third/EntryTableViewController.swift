@@ -4,11 +4,11 @@ class EntryTableViewController: UITableViewController {
 
     var delegate: TextProtocol?
 
-    var array: [TextFieldModelEnum] = [TextFieldModelEnum(type: .text, title: "Normal"),
-                                       TextFieldModelEnum(type: .number, title: "Números"),
-                                       TextFieldModelEnum(type: .capitalLetter, title: "Maiúscula"),
-                                       TextFieldModelEnum(type: .date, title: "Data"),
-                                       TextFieldModelEnum(type: .entry, title: "Lista")]
+    var array: [TextFieldModelEnum] = [TextFieldModelEnum(type: .text, title: "1"),
+                                       TextFieldModelEnum(type: .number, title: "2"),
+                                       TextFieldModelEnum(type: .capitalLetter, title: "3"),
+                                       TextFieldModelEnum(type: .date, title: "4"),
+                                       TextFieldModelEnum(type: .entry, title: "5")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

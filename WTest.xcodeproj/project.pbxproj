@@ -109,6 +109,14 @@
 			path = Fourth;
 			sourceTree = "<group>";
 		};
+		23DBE25922454BC400405F12 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				3CBDD5D0223AD14E008DCEA0 /* FirstViewController.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
 		3C01CB2B223BAC6800B9FD63 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,9 +220,9 @@
 		3C01CB83223BC25000B9FD63 /* Second */ = {
 			isa = PBXGroup;
 			children = (
-				3C01CB7F223BBA5700B9FD63 /* SecondViewController.swift */,
 				3C01CB81223BC24A00B9FD63 /* HeaderView.swift */,
 				3C01CB84223BC26100B9FD63 /* HeaderView.xib */,
+				3C01CB7F223BBA5700B9FD63 /* SecondViewController.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -283,7 +291,7 @@
 		3CBDD5E6223AD257008DCEA0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3CBDD5D0223AD14E008DCEA0 /* FirstViewController.swift */,
+				23DBE25922454BC400405F12 /* First */,
 				3C01CB83223BC25000B9FD63 /* Second */,
 				3C2A7206223BF3C900C4BDC2 /* Third */,
 				23DBE2582245482400405F12 /* Fourth */,
@@ -488,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
 				INFOPLIST_FILE = WTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,6 +631,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
 				INFOPLIST_FILE = WTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,6 +650,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
 				INFOPLIST_FILE = WTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

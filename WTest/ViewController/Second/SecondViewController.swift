@@ -35,7 +35,7 @@ class SecondViewController: UITableViewController {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.navigationController!.navigationBar.alpha = 1 - (self.tableView.contentOffset.y / (self.tableView.contentSize.height - self.tableView.frame.size.height));
+        self.navigationController!.navigationBar.alpha = 1 - ((self.tableView.contentOffset.y * 2) / (self.tableView.contentSize.height - self.tableView.frame.size.height));
     }
 
 }
