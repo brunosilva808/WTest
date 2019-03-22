@@ -10,7 +10,7 @@ import Foundation
 public final class Configuration {
     
     public private(set) static var shared = Configuration()
-    public var configurationName: String = ""
+    public var configurationName: String = "WTest"
     
     private lazy var configurations: [String : Any] = {
         if let configurationsData = Bundle.main.infoDictionary?[self.configurationName] as? [String: Any] {
@@ -25,5 +25,9 @@ public final class Configuration {
     enum API {
         //        static var url: URL = { return Configuration.urlFor(key: "APIURL") }()
         static var url: URL = { return URL(string: "https://github.com/centraldedados/")! }()
+    }
+    
+    enum Website {
+        static var url: URL = { return Configuration.urlFor(key: "WebsiteURL") }()
     }
 }
