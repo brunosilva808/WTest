@@ -8,7 +8,7 @@ class SecondViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Second View Controller"
+        self.title = "Second"
     }
 
     // MARK: - Table view data source
