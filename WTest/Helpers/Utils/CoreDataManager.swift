@@ -10,12 +10,20 @@ import Foundation
 import UIKit
 import CoreData
 
+private enum CoreDataEntity {
+    static let postalCode = "PostalCodeEntity"
+}
+
+private enum CoreDatePostalCode {
+    static let postalCode = "postalCode"
+}
+
 public class CoreDataManager {
     public private(set) static var shared = CoreDataManager()
 
     var isEmpty : Bool {
         do{
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PostalCodeEntity")
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataEntity.postalCode)
             let count  = try getContext()?.count(for: request)
             return count == 0 ? true : false
         }catch{
@@ -36,9 +44,9 @@ public class CoreDataManager {
     
     func saveData(text: String) {
         if let context = self.getContext() {
-            let entity = NSEntityDescription.entity(forEntityName: "PostalCodeEntity", in: context)
+            let entity = NSEntityDescription.entity(forEntityName: CoreDataEntity.postalCode, in: context)
             let newPostalCode = NSManagedObject(entity: entity!, insertInto: context)
-            newPostalCode.setValue(text, forKey: "postalCode")
+            newPostalCode.setValue(text, forKey: CoreDatePostalCode.postalCode)
             
             do {
                 try context.save()
@@ -50,16 +58,16 @@ public class CoreDataManager {
     
     func getData(searchText: String = "") -> [String] {
         var array:[String] = []
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PostalCodeEntity")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataEntity.postalCode)
         if !searchText.isEmpty {
-            request.predicate = NSPredicate(format: "postalCode CONTAINS[cd] %@", "\(searchText)")
+            request.predicate = NSPredicate(format: "\(CoreDatePostalCode.postalCode) CONTAINS[cd] %@", "\(searchText)")
             request.returnsObjectsAsFaults = false
         }
         
         do {
             let result = try self.getContext()?.fetch(request)
             for data in result as! [NSManagedObject] {
-                let postalCode = data.value(forKey: "postalCode") as! String
+                let postalCode = data.value(forKey: CoreDatePostalCode.postalCode) as! String
                 array.append(postalCode)
             }
         } catch {
