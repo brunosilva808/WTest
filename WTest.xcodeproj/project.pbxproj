@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23DBE262224923C700405F12 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DBE261224923C700405F12 /* CSV.swift */; };
 		3C01CB35223BAC6800B9FD63 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB2D223BAC6800B9FD63 /* Utils.swift */; };
 		3C01CB36223BAC6800B9FD63 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB2E223BAC6800B9FD63 /* Configuration.swift */; };
 		3C01CB37223BAC6800B9FD63 /* UIView+UINib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB30223BAC6800B9FD63 /* UIView+UINib.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23DBE261224923C700405F12 /* CSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		3C01CB2D223BAC6800B9FD63 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3C01CB2E223BAC6800B9FD63 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3C01CB30223BAC6800B9FD63 /* UIView+UINib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+UINib.swift"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				3C01CB2D223BAC6800B9FD63 /* Utils.swift */,
 				3C01CB2E223BAC6800B9FD63 /* Configuration.swift */,
+				23DBE261224923C700405F12 /* CSV.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				3C01CB59223BAC9700B9FD63 /* HTTPTask.swift in Sources */,
 				3C01CB35223BAC6800B9FD63 /* Utils.swift in Sources */,
 				3C01CB5A223BAC9700B9FD63 /* HTTPMethod.swift in Sources */,
+				23DBE262224923C700405F12 /* CSV.swift in Sources */,
 				3C01CB37223BAC6800B9FD63 /* UIView+UINib.swift in Sources */,
 				3C01CB58223BAC9700B9FD63 /* NetworkRouter.swift in Sources */,
 				3C01CB82223BC24A00B9FD63 /* HeaderView.swift in Sources */,

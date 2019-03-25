@@ -7,29 +7,32 @@ class FirstViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManagerNew().response(with: postalCodesRequest, page: 0, onSuccess: { (response) in
-            let csvRows = self.csv(data: response)
+        NetworkManagerNew().response(with: postalCodesRequest, page: 0, onSuccess: { [weak self] (response) in
+            CSV.shared.csv(data: response)
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }, onError: { (error) in
 
         }) {
 
         }
     }
-    
-    func csv(data: String) -> [[String]] {
-        var result: [[String]] = []
-        let rows = data.components(separatedBy: "\n")
-        var skip = true
-        for row in rows {
-            if skip == true {
-                skip = false
-                continue
-            }
-            let columns = row.components(separatedBy: ";")
-            result.append(columns)
-        }
-        return result
-    }
 
+}
+
+extension FirstViewController {
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = CSV.shared.getRow(indexPath.row)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CSV.shared.postalCodes.count
+    }
 }
 

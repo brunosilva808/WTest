@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FZT-OI-L3Q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="FZT-OI-L3Q">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FZT-OI-L3Q" id="FEZ-At-e9S">
@@ -33,7 +33,7 @@
                             <outlet property="delegate" destination="KZy-bS-t5q" id="rQf-A3-qS3"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="hRN-o5-L03"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="second" id="hRN-o5-L03"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0f-LY-XHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
