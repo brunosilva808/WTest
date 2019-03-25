@@ -10,7 +10,8 @@ public enum API: HTTPEndpoint {
     var info: EndpointInfo {
         switch self {
         case .postalCode:
-            return (.get, "codigos_postais/blob/master/datapackage.json")
+            //https://raw.githubusercontent.com/centraldedados/codigos_postais/master/data/codigos_postais.csv
+            return (.get, "codigos_postais/master/data/codigos_postais.csv")
         }
     }
 }

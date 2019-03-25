@@ -59,7 +59,6 @@ class ThirdViewController: UITableViewController {
         super.viewDidLoad()
 
         self.setupView()
-//        self.setupNotifications()
     }
     
     func setupView() {
@@ -68,58 +67,6 @@ class ThirdViewController: UITableViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tap)
     }
-    
-//    deinit {
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-//    }
-//
-//    func setupNotifications() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-//    }
-//
-//    @objc func keyboardWillShow(notification: Notification) {
-////        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-////
-////            if self.view.frame.origin.y == 0 {
-////                self.view.frame.origin.y -= keyboardSize.height
-////            }
-////        }
-//
-//        var keyboardHeight: CGFloat = 0.0
-//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//            let keyboardRectangle = keyboardFrame.cgRectValue
-//            keyboardHeight = keyboardRectangle.height
-//        }
-//
-//        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardHeight, right: 0.0)
-//
-//
-//        self.tableView.contentInset = contentInsets
-//        self.tableView.scrollIndicatorInsets = contentInsets
-//
-//        // If active text field is hidden by keyboard, scroll it so it's visible
-//        // Your app might not need or want this behavior.
-//        var aRect = self.view.frame
-//        aRect.size.height -= keyboardHeight
-//
-//        if !CGRectContainsPoint(aRect, activeField!.frame.origin) {
-//            self.tableView.scrollRectToVisible(activeField!.frame, animated: true)
-//        }
-//    }
-//
-//    @objc func keyboardWillHide(notification: Notification) {
-////        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-////
-////            if self.view.frame.origin.y != 0 {
-////                self.view.frame.origin.y += keyboardSize.height
-////            }
-////        }
-//
-//        self.tableView.contentInset = .zero
-//        self.tableView.scrollIndicatorInsets = .zero
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
