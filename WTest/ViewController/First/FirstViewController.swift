@@ -15,7 +15,6 @@ class FirstViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.searchController.searchBar.becomeFirstResponder()
     }
     
     func setupSearchController() {
@@ -31,6 +30,7 @@ class FirstViewController: UITableViewController {
             CSV.shared.csv(data: response)
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+                self?.searchController.searchBar.becomeFirstResponder()
             }
             }, onError: { (error) in
                 
@@ -46,12 +46,20 @@ extension FirstViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = CSV.shared.getRow(indexPath.row)
+        if self.isFiltering() {
+            cell.textLabel?.text = self.filterPostalCodes[indexPath.row]
+        } else {
+            cell.textLabel?.text = CSV.shared.getText(row: indexPath.row)
+        }
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.isFiltering() {
+            return self.filterPostalCodes.count
+        }
+        
         return CSV.shared.postalCodes.count
     }
 }
@@ -64,13 +72,13 @@ extension FirstViewController {
     }
     
     private func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        self.filterPostalCodes = CSV.shared.postalCodes.filter({( result : String) -> Bool in
-            if !result.isEmpty {
-                return true
-            } else {
-                return false
+        
+        self.filterPostalCodes = CSV.shared.postalCodes.filter { if $0.lowercased().contains(searchText.lowercased()) {
+            return true
+        } else {
+            return false
             }
-        })
+        }
         
         self.tableView.reloadData()
     }
