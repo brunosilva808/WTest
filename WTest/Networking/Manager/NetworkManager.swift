@@ -3,7 +3,7 @@ import Foundation
 struct NetworkManagerNew {
     var router = RouterNew()
     
-    func response(with request: HTTPRequest, page: Int, onSuccess: @escaping ResponseCallback<PostalCode>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
+    func response(with request: HTTPRequest, page: Int, onSuccess: @escaping ResponseCallback<String>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
         
         router.request(with: request, page: page) { (data, response, error) in 
             if error != nil {
@@ -17,14 +17,10 @@ struct NetworkManagerNew {
                 case .success:
                     guard let data = data else { return }
 
-                        let string = String(data: data, encoding: String.Encoding.utf8)
-                        print(string!) //JSONSerialization
-                    
-                    do {
-                        let result = try JSONDecoder().decode(PostalCode.self, from: data)
-                        onSuccess(result)
-                    } catch let jsonError {
-                        onError(jsonError.localizedDescription)
+                    if let string = String(data: data, encoding: String.Encoding.utf8) {
+                        onSuccess(string)
+                    } else {
+                        onError("")
                     }
                 case .failure(let failure):
                     onError(failure)

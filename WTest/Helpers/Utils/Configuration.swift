@@ -24,7 +24,7 @@ public final class Configuration {
     
     enum API {
         //        static var url: URL = { return Configuration.urlFor(key: "APIURL") }()
-        static var url: URL = { return URL(string: "https://github.com/centraldedados/")! }()
+        static var url: URL = { return URL(string: "https://raw.githubusercontent.com/centraldedados/")! }()
     }
     
     enum Website {
