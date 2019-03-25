@@ -11,10 +11,8 @@ import Foundation
 public final class CSV {
     
     public private(set) static var shared = CSV()
-    var postalCodes: [String] = []
     
     func csv(data: String) {
-        var result: [String] = []
         let rows = data.components(separatedBy: "\n")
         var skip = true
 
@@ -23,12 +21,12 @@ public final class CSV {
                 skip = false
                 continue
             }
-            if let columns = row.components(separatedBy: ";").first {
-                result.append(setStringFormat(text: columns))
+            if let postalCode = row.components(separatedBy: ";").first {
+                DispatchQueue.main.async {
+                    CoreDataManager.shared.saveData(text: self.setStringFormat(text: postalCode))
+                }
             }
         }
-        
-        self.postalCodes = result
     }
     
     func setStringFormat(text: String) -> String {
@@ -40,8 +38,5 @@ public final class CSV {
         }
         return ""
     }
-    
-    func getText(row: Int) -> String {
-        return self.postalCodes[row]
-    }
+
 }
