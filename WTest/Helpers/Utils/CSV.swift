@@ -11,10 +11,10 @@ import Foundation
 public final class CSV {
     
     public private(set) static var shared = CSV()
-    var postalCodes: [[String]] = []
+    var postalCodes: [String] = []
     
     func csv(data: String) {
-        var result: [[String]] = []
+        var result: [String] = []
         let rows = data.components(separatedBy: "\n")
         var skip = true
 
@@ -23,22 +23,19 @@ public final class CSV {
                 skip = false
                 continue
             }
-            let columns = row.components(separatedBy: ";")
-            result.append(columns)
+            if let columns = row.components(separatedBy: ";").first {
+                result.append(columns)
+            }
         }
         
         self.postalCodes = result
     }
     
     func getRow(_ row: Int) -> String {
-        let postalCodes = self.postalCodes[row].first?.components(separatedBy: ",")
+        let postalCodes = self.postalCodes[row].components(separatedBy: ",")
         
-        if  let count = postalCodes?.count,
-            count > 2,
-            let city = postalCodes?[count-1],
-            let streetPostalCode = postalCodes?[count-2],
-            let postalCode = postalCodes?[count-3]{
-            return postalCode + "-" + streetPostalCode + ", " + city
+        if  postalCodes.count > 2 {
+            return postalCodes[postalCodes.count-1] + "-" + postalCodes[postalCodes.count-2] + ", " + postalCodes[postalCodes.count-3]
         }
         return ""
     }
