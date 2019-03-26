@@ -20,7 +20,7 @@
 		3C01CB50223BAC9700B9FD63 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB3E223BAC9700B9FD63 /* ParameterEncoder.swift */; };
 		3C01CB51223BAC9700B9FD63 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB3F223BAC9700B9FD63 /* URLParameterEncoder.swift */; };
 		3C01CB52223BAC9700B9FD63 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB40223BAC9700B9FD63 /* JSONParameterEncoder.swift */; };
-		3C01CB53223BAC9700B9FD63 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB42223BAC9700B9FD63 /* NetworkManager.swift */; };
+		3C01CB53223BAC9700B9FD63 /* NetworkManagerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB42223BAC9700B9FD63 /* NetworkManagerNew.swift */; };
 		3C01CB54223BAC9700B9FD63 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB44223BAC9700B9FD63 /* APIEndpoint.swift */; };
 		3C01CB55223BAC9700B9FD63 /* Request+PostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB46223BAC9700B9FD63 /* Request+PostalCode.swift */; };
 		3C01CB56223BAC9700B9FD63 /* HTTPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C01CB48223BAC9700B9FD63 /* HTTPEndpoint.swift */; };
@@ -62,7 +62,7 @@
 		3C01CB3E223BAC9700B9FD63 /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		3C01CB3F223BAC9700B9FD63 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		3C01CB40223BAC9700B9FD63 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
-		3C01CB42223BAC9700B9FD63 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3C01CB42223BAC9700B9FD63 /* NetworkManagerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerNew.swift; sourceTree = "<group>"; };
 		3C01CB44223BAC9700B9FD63 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		3C01CB46223BAC9700B9FD63 /* Request+PostalCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+PostalCode.swift"; sourceTree = "<group>"; };
 		3C01CB48223BAC9700B9FD63 /* HTTPEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPEndpoint.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		3C01CB41223BAC9700B9FD63 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				3C01CB42223BAC9700B9FD63 /* NetworkManager.swift */,
+				3C01CB42223BAC9700B9FD63 /* NetworkManagerNew.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 				3C01CB39223BAC6800B9FD63 /* UICollectionView+Extension.swift in Sources */,
 				3C2A7205223BF3C600C4BDC2 /* TextFieldCell.swift in Sources */,
 				3C2A720C223C159900C4BDC2 /* EntryTableViewController.swift in Sources */,
-				3C01CB53223BAC9700B9FD63 /* NetworkManager.swift in Sources */,
+				3C01CB53223BAC9700B9FD63 /* NetworkManagerNew.swift in Sources */,
 				3C01CB51223BAC9700B9FD63 /* URLParameterEncoder.swift in Sources */,
 				3C2A7213223C1B7E00C4BDC2 /* ButtonProtocol.swift in Sources */,
 				3C01CB52223BAC9700B9FD63 /* JSONParameterEncoder.swift in Sources */,

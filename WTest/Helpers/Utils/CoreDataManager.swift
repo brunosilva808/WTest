@@ -2,8 +2,8 @@
 //  CoreDataManager.swift
 //  WTest
 //
-//  Created by Bruno1 on 25/03/2019.
-//  Copyright © 2019 Carbon. All rights reserved.
+//  Created by Bruno Silva on 25/03/2019.
+//  Copyright © 2019 Bruno Silva. All rights reserved.
 //
 
 import Foundation

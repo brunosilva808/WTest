@@ -4,11 +4,12 @@ class FirstViewController: UITableViewController {
 
     private var searchController = UISearchController(searchResultsController: nil)
     private var postalCodesRequest = Request.PostalCode()
-    private var filterPostalCodes: [String] = []
+    private var indicator = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupTableView()
         self.getPostalCodes()
         self.setupSearchController()
     }
@@ -17,12 +18,21 @@ class FirstViewController: UITableViewController {
         super.viewDidAppear(animated)
     }
     
+    func setupTableView() {
+        let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.startAnimating()
+        spinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44)
+        self.tableView.tableFooterView = spinner
+        self.tableView.tableFooterView?.isHidden = false
+    }
+    
     func setupSearchController() {
         
         self.searchController.searchResultsUpdater = self
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "Search"
         self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
         self.definesPresentationContext = true
     }
 
@@ -30,19 +40,22 @@ class FirstViewController: UITableViewController {
         
         if CoreDataManager.shared.isEmpty {
             
-            NetworkManagerNew().response(with: postalCodesRequest, page: 0, onSuccess: { [weak self] (response) in
+            self.tableView.tableFooterView?.isHidden = false
+            
+            NetworkManagerNew().response(with: postalCodesRequest, onSuccess: { [weak self] (response) in
                 CSV.shared.csv(data: response)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
+                    self?.tableView.tableFooterView?.isHidden = true
                     self?.searchController.searchBar.becomeFirstResponder()
                 }
                 }, onError: { (error) in
             }) {}
         } else {
 
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.searchController.searchBar.becomeFirstResponder()
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+                self?.searchController.searchBar.becomeFirstResponder()
             }
 
         }
