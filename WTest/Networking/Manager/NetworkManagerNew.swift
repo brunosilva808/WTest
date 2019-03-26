@@ -3,9 +3,9 @@ import Foundation
 struct NetworkManagerNew {
     var router = RouterNew()
     
-    func response(with request: HTTPRequest, page: Int, onSuccess: @escaping ResponseCallback<String>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
+    func response(with request: HTTPRequest, onSuccess: @escaping ResponseCallback<String>, onError: @escaping APIErrorCallback, onFinally: @escaping SimpleCallback) {
         
-        router.request(with: request, page: page) { (data, response, error) in 
+        router.request(with: request) { (data, response, error) in
             if error != nil {
                 onError(error?.localizedDescription ?? NetworkResponse.failed.rawValue)
             }

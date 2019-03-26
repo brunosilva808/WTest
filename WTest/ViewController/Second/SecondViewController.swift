@@ -11,7 +11,9 @@ class SecondViewController: UITableViewController {
         self.title = "Second"
     }
 
-    // MARK: - Table view data source
+}
+
+extension SecondViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 50
